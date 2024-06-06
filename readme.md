@@ -2,7 +2,7 @@
 This is a demo application that was built as an experiment to see how accurately complex tables could be extracted from PDF documents. Complex tables are ones that may span multiple pages and be split either vertically or horizontally.
 
 ## Code
-The code is written in C# using .NET 8.  The project uses multiple third party Nuget packages.
+The code is written in C# using .NET 8.  The project uses third party Nuget packages.
 
 ## Requirements
 The following Azure services are required for this demo:
