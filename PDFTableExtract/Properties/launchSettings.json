@@ -1,8 +1,7 @@
 {
   "profiles": {
     "PDFTableExtract": {
-      "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\mhacker\\OneDrive - Microsoft\\Documents\\Customers\\OH\\AuditorGeneral\\OCBOA-Cash Basis Financial Audit_15A01_ESC_AOS_2022.pdf\"\r\n"
+      "commandName": "Project"
     }
   }
 }

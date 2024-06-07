@@ -33,6 +33,7 @@ Here's a simplified explanation of how it works:
 1.	The stitched images are uploaded to Azure Blob Storage.
 1.	The application then sends a request to Azure's OpenAI API. This request includes the URLs of the uploaded images and instructions for the AI to extract all tables from the images and return them as JSON.
 1.	The AI processes the images and returns the extracted tables as JSON. If no tables are found, it returns a message saying "no table".
+1.  The JSON is verified as being well formed. If it is not well formed, the user prompt is updated and the request is resent to Azure OpenAI. Only one additional attempt is made. If it fails the 2nd time, the table is skipped.
 1.	The application then saves the JSON data to output files, one for each table. It also prints a message to the console for each file it creates.
 1.	If there was an error calling the API, the application prints an error message to the console.
 

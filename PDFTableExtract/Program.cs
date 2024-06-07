@@ -298,12 +298,26 @@ foreach (var consecutivePageNumberGroup in consecutivePageNumbers)
 							//write out the content for each JSON document
 							for (int i = 0; i < jsonDocuments.Length; i++)
 							{
+								//validate json
+								try
+								{
+									JsonDocument.Parse(jsonDocuments[i]);
+								}
+								catch(Exception ex)
+								{
+									Console.ForegroundColor = ConsoleColor.Red;
+									Console.WriteLine($"JSON document {i} is not valid. {ex.Message}");
+									Console.ForegroundColor= ConsoleColor.Yellow;
+									continue;
+								}
+
 								string output = $"{outputPath}\\output_page_{consecutivePageCount}_table_{i}.json";
 								File.WriteAllText(output, jsonDocuments[i]);
 								Console.ForegroundColor = ConsoleColor.Green;
 								Console.WriteLine($"{output} has been created with the content from the response from the OpenAI API.");
 								Console.ForegroundColor = ConsoleColor.Yellow;
 								//TODO load into Cosmos DB
+
 							}
 						}
 						else
